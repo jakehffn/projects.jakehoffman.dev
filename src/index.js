@@ -10,7 +10,6 @@ import {
 } from "react-router-dom"
 
 import AuthProvider from './components/auth/AuthProvider.js';
-import WordsProvider from './components/WordsContext.js';
 
 import './index.css';
 import App from './views/App.js';
