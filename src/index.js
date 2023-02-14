@@ -9,29 +9,19 @@ import {
   Navigate
 } from "react-router-dom"
 
-import AuthProvider from './components/auth/AuthProvider.js';
-
 import './index.css';
-import App from './views/App.js';
-import Words from './views/Words.js';
-import Login from "./views/auth/Login.js"
-import Register from "./views/auth/Register.js"
+import App from './App.js';
+import Words from './words/Words.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/words" element={<Words />} />
-          {/* <Route path="/words/auth/*" element={<Auth />} /> */}
-          <Route path="/words/auth/login" element={ <Login /> } />
-          <Route path="/words/auth/register" element={ <Register /> } />
-          <Route path="/words/auth" element={ <Navigate replace to="/words/auth/login" /> } />
-          <Route path="*" element={<App />} />
-        </Routes>
-      </AuthProvider>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/words/*" element={<Words />} />
+        {/* <Route path="*" element={<App />} /> */}
+      </Routes>
     </React.StrictMode>
   </BrowserRouter>
 );

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 
 import { AuthContext } from "../../components/auth/AuthProvider";
-import firebaseConfig from "../../config";
+import firebaseConfig from "../../../config";
 import firebase from "firebase/compat/app";
 
 export const auth = firebaseConfig.auth();

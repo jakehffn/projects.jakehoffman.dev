@@ -1,6 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../components/auth/AuthProvider";
+import { AuthContext, AuthProvider } from "./components/auth/AuthProvider";
+import Login from "./views/auth/Login.js"
+import Register from "./views/auth/Register.js"
+import { 
+  BrowserRouter,
+  Routes, 
+  Route,
+  Navigate
+} from "react-router-dom"
 
 import firebaseConfig from "../config";
 import { 
@@ -11,7 +19,7 @@ import {
   get 
 } from "firebase/database";
 
-import NavBar from "../components/NavBar";
+import NavBar from "./components/NavBar";
 
 
 
@@ -124,13 +132,29 @@ function Game() {
   );
 }
 
+function MainPage() {
+  
+  return (
+      <div className="h-full w-full">
+        <NavBar />
+        <Game />
+      </div>
+  )
+}
+
 function Words() {
   
   return (
-    <div className="h-full w-full">
-      <NavBar />
-      <Game />
-    </div>
+    <React.StrictMode>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={ <MainPage /> } />
+          <Route path="/auth/login" element={ <Login /> } />
+          <Route path="/auth/register" element={ <Register /> } />
+          <Route path="/auth" element={ <Navigate replace to="/words/auth/login" /> } />
+        </Routes>
+      </AuthProvider>
+    </React.StrictMode>
   );
 }
 

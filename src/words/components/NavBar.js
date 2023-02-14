@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "./auth/AuthProvider";
-import firebaseConfig from "../config.js";
+import firebaseConfig from "../../config.js";
 
 export default function NavBar(props) {
 

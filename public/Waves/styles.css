@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(241, 241, 241);
+    color: rgb(190, 190, 190);
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+#userInput {
+    position: absolute;
+
+    top: -100px;
+    opacity: 0;
+    /* width: 100%;
+    height: 100%; */
+    /* padding-bottom: 100vh; */
+}
+
+#waves {
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.wave {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-container {
+
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: visible;
+
+    transform: rotate(0rad);
+    /* transition: 850ms; */
+    /* transition-delay: 50ms; */
+}
+
+.atom {
+    display: inline-block;
+}

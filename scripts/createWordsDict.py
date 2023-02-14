@@ -1,5 +1,7 @@
 import json
 
+# Script for the words thing. Turns a line separated dictionary into a format useful for firebase
+
 wordsDict = {}
 
 with open('dictionary.txt', 'r') as f:
