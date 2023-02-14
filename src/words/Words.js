@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext, AuthProvider } from "./components/auth/AuthProvider";
 import Login from "./views/auth/Login.js"
 import Register from "./views/auth/Register.js"
 import { 
-  BrowserRouter,
   Routes, 
   Route,
   Navigate
@@ -15,7 +13,6 @@ import {
   getDatabase,
   ref,
   set,
-  push,
   get 
 } from "firebase/database";
 
@@ -133,7 +130,7 @@ function Game() {
 }
 
 function MainPage() {
-  
+
   return (
       <div className="h-full w-full">
         <NavBar />

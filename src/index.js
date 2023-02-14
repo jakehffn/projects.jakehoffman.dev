@@ -5,8 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { 
   BrowserRouter,
   Routes, 
-  Route,
-  Navigate
+  Route
 } from "react-router-dom"
 
 import './index.css';
