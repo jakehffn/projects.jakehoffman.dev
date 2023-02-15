@@ -12,8 +12,10 @@ export default function App() {
               desc: "A previous version of my personal website. Currently a little broken since I've converted to React."},
             {name: "Waves", url: "/Waves/", 
               desc: "Type something."},
-              {name: "Words", url: "/Words/", 
-              desc: "Write some words. Maybe you can type the most of anyone."},
+            {name: "Words", url: "/Words/", 
+              desc: "Write some words and I'll put them in a database."},
+            {name: "Cube", url: "/Cube/", 
+              desc: "CSS cube will follow you."},
             ].map((item) => 
               <>
                   <dt><a href={item.url} className="font-bold hover:text-neutral-300">{item.name}</a></dt>
