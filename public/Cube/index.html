@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <title>Cube</title>
+  </head>
+  <body>
+    <div class="vertical-aligner">
+      <div class="scene">
+        <div id="computer">
+          <div class="computer-face computer-face-front"></div>
+          <div class="computer-face computer-face-back"></div>
+          <div class="computer-face computer-face-left"></div>
+          <div class="computer-face computer-face-right"></div>
+          <div class="computer-face computer-face-top"></div>
+          <div class="computer-face computer-face-bottom"></div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="cube.js"></script>
+
+    <style>
+
+      * {
+        margin: 0;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .vertical-aligner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .scene {
+        width: 200px;
+        height: 200px;
+        perspective: 600px;
+      }
+
+      #computer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.1s;
+      }
+
+      .computer-face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: whitesmoke;
+      }
+
+      .computer-face-front  { 
+        transform: rotateY(  0deg) translateZ(100px); 
+        background-color: rgb(235, 235, 235);
+      }
+      .computer-face-right  { 
+        transform: rotateY( 90deg) translateZ(100px); 
+        background-color: rgb(196, 196, 196);
+      }
+      .computer-face-back   { transform: rotateY(180deg) translateZ(100px); }
+      .computer-face-left   { transform: rotateY(-90deg) translateZ(100px); }
+      .computer-face-top    { transform: rotateX( 90deg) translateZ(100px); }
+      .computer-face-bottom { 
+        transform: rotateX(-90deg) translateZ(100px); 
+        background-color: rgb(143, 143, 143);
+      }
+    </style>
+
+  </body>
+</html>
