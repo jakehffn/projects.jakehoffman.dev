@@ -1,0 +1,3 @@
+[submodule "public/ChessCoorTrainer"]
+	path = public/ChessCoordTrainer
+	url = https://github.com/jakehffn/ChessCoordTrainer
