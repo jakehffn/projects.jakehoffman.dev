@@ -3,8 +3,8 @@
 @layer base {
   body {
     @apply h-screen;
-    @apply bg-black;
-    @apply text-white;
+    @apply bg-main-bg;
+    @apply text-main-text;
   }
 
   #root {

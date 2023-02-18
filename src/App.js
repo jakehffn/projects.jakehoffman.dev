@@ -2,7 +2,7 @@ export default function App() {
   return (
     <div className="text-sm h-full w-full font-serif p-8">
       <div className="flex flex-col justify-between h-full">
-        <dl className="[&>*:nth-child(4n-1)]:bg-neutral-900/50 [&>*:nth-child(4n)]:bg-neutral-900/50 grid auto-cols-auto grid-cols-4">
+        <dl className="[&>*:nth-child(4n-1)]:bg-main-code-bg [&>*:nth-child(4n)]:bg-main-code-bg grid auto-cols-auto grid-cols-4">
           {[
             {name: "Chess Coordinate Trainer", url: "/ChessCoordTrainer/", 
               desc: "Tool to help memorize the squares on a chess board."},
