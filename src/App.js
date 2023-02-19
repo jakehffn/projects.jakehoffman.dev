@@ -27,7 +27,7 @@ export default function App() {
             {[
               {url: "https://github.com/jakehffn", title: "@GitHub"},
               {url: "https://www.linkedin.com/in/jacob-t-hoffman/", title: "@LinkedIn"},
-              {url: "https://twitter.com/jakehffn", title: "@Twitter"}
+              // {url: "https://twitter.com/jakehffn", title: "@Twitter"}
             ].map((link) => {return <a href={link.url} className="p-2 text-sm font-bold hover:text-main-text-hover">{link.title}</a>})}
         </div>
       </div>
