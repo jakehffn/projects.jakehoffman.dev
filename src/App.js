@@ -18,7 +18,7 @@ export default function App() {
               desc: "CSS cube will follow you."},
             ].map((item) => 
               <>
-                  <dt><a href={item.url} className="font-bold hover:text-neutral-300">{item.name}</a></dt>
+                  <dt><a href={item.url} className="pl-1 font-bold hover:text-main-text-hover">{item.name}</a></dt>
                   <dd className="col-span-3">     {item.desc}</dd>
               </>
             )}
@@ -28,7 +28,7 @@ export default function App() {
               {url: "https://github.com/jakehffn", title: "@GitHub"},
               {url: "https://www.linkedin.com/in/jacob-t-hoffman/", title: "@LinkedIn"},
               {url: "https://twitter.com/jakehffn", title: "@Twitter"}
-            ].map((link) => {return <a href={link.url} className="p-2 text-sm font-bold hover:text-neutral-300">{link.title}</a>})}
+            ].map((link) => {return <a href={link.url} className="p-2 text-sm font-bold hover:text-main-text-hover">{link.title}</a>})}
         </div>
       </div>
     </div>
