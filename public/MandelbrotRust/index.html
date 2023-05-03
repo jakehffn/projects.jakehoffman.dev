@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-16">
+    <title>Mandelbrot Rust</title>
+    <link ref="stylesheet" type="text/css" href="styles.css" />
+    <script defer>
+      (async () => {
+
+        let { instance } = await WebAssembly.instantiateStreaming(
+          fetch('./mandelbrot_rust.wasm')
+        );
+
+        const width = 700;
+        const height = 700;
+
+        const canvas = document.getElementById("canvas");
+        canvas.width = width;
+        canvas.height = height;
+
+        const buffer_address = instance.exports.BUFFER.value;
+        const image = new ImageData(
+          new Uint8ClampedArray(
+            instance.exports.memory.buffer,
+            buffer_address,
+            4 * width * height,
+          ),
+          width,
+        );
+
+        const ctx = canvas.getContext("2d");
+
+        const render = () => {
+          instance.exports.go();
+          ctx.putImageData(image, 0, 0);
+          requestAnimationFrame(render);
+        };
+
+        render();
+
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="horizontal-align">
+      <div id="vertical-align">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </body>
+  <style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #horizontal-align {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #vertical-align {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  </style>
+</html>
